@@ -60,7 +60,7 @@ for (let key in ORGS) {
 function setupPeers(channel, org, client) {
 	for (let key in ORGS[org]) {
 		if (key.indexOf('peer') === 0) {
-			let data = fs.readFileSync(path.join(__dirname, ORGS[org][key]['tls_cacerts']));
+			let data = fs.readFileSync(ORGS[org][key]['tls_cacerts']);
 			let peer = client.newPeer(
 				ORGS[org][key].requests,
 				{
