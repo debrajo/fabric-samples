@@ -336,7 +336,7 @@ var getLogger = function(moduleName) {
 
 var getPeerAddressByName = function(org, peer) {
 	var address = ORGS[org][peer].requests;
-	return address.split('grpcs://')[1];
+	return address.split('grpc://')[1];
 };
 
 exports.getChannelForOrg = getChannelForOrg;
