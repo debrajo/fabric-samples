@@ -76,7 +76,7 @@ function setupPeers(channel, org, client) {
 
 function newOrderer(client) {
 	var caRootsPath = ORGS.orderer.tls_cacerts;
-	let data = fs.readFileSync(path.join(__dirname, caRootsPath));
+	let data = fs.readFileSync(caRootsPath);
 	let caroots = Buffer.from(data).toString();
 	return client.newOrderer(config.orderer, {
 		'pem': caroots,
